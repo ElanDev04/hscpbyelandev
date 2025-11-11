@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — ELANDEV'S HSCP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-include="includes/header.html"></div>
+
+    <main>
+      <section class="section container">
+        <h2>Portfolio</h2>
+        <p class="muted">Captured frames. Endless stories..</p>
+
+        <!-- ===================== EVENTS GALLERY ===================== -->
+        <div class="gallery-group">
+          <h3 class="gallery-title">Events</h3>
+          <div class="gallery">
+            <a href="pages/babyshower1.php">
+              <img class="shot" src="assets/portfolio/babyshower1/thumb.jpg" alt="Baby Shower Gallery" />
+              <div class="overlay">Baby Shower</div>
+            </a>  
+            <a href="pages/wedding1.php">
+              <img class="shot" src="assets/portfolio/wedding1/thumb.jpg" alt="Wedding Gallery" />
+              <div class="overlay">Wedding</div>
+            </a>
+            <a href="pages/msuevent.php">
+              <img class="shot" src="assets/portfolio/msuevent/thumb.jpg" alt="Event Gallery" />
+              <div class="overlay">Event</div>
+            </a>
+            <a href="pages/grad1.php">
+              <img class="shot" src="assets/portfolio/graduation1/thumb.jpg" alt="Graduation Gallery" />
+              <div class="overlay">Graduation</div>
+            </a>
+            <a href="pages/birthday4.php">
+              <img class="shot" src="assets/portfolio/birthday4/thumb.jpg" alt="Birthday Gallery" />
+              <div class="overlay">Birthday</div>
+            </a>
+            <a href="pages/birthday6.php">
+              <img class="shot" src="assets/portfolio/birthday6/thumb.jpg" alt="Birthday" />
+              <div class="overlay">Birthday</div>
+            </a>
+            <a href="pages/birthday7.php">
+              <img class="shot" src="assets/portfolio/birthday7/thumb.jpg" alt="Birthday Gallery" />
+              <div class="overlay">Birthday</div>
+            </a>
+            <a href="pages/bride1.php">
+              <img class="shot" src="assets/portfolio/bridesses1/thumb.jpg" alt="Bride Seeing Gallery" />
+              <div class="overlay">Bride Seeing</div>
+            </a>
+            <a href="pages/bride2.php">
+              <img class="shot" src="assets/portfolio/bridesses2/thumb.jpg" alt="Bride Seeing Gallery" />
+              <div class="overlay">Bride Seeing</div>
+            </a>
+            <a href="pages/birthday8.php">
+              <img class="shot" src="assets/portfolio/birthday8/thumb.jpg" alt="Birthday Gallery" />
+              <div class="overlay">Birthday</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===================== PORTRAITS GALLERY ===================== -->
+        <div class="gallery-group">
+          <h3 class="gallery-title">Portraits</h3>
+          <div class="gallery">
+            <a href="pages/portrait1.php">
+              <img class="shot" src="assets/portfolio/pot1/thumb.jpg" alt="Portrait Gallery" />
+              <div class="overlay">Portrait</div>
+            </a>
+            <a href="pages/portrait2.php">
+              <img class="shot" src="assets/portfolio/pot2/thumb.jpg" alt="Portrait Gallery" />
+              <div class="overlay">Portrait</div>
+            </a>
+            <a href="pages/portrait3.php">
+              <img class="shot" src="assets/portfolio/pot3/thumb.jpg" alt="Portrait Gallery" />
+              <div class="overlay">Portrait</div>
+            </a>
+            <a href="pages/portrait4.php">
+              <img class="shot" src="assets/portfolio/pot4/thumb.jpg" alt="Portrait Gallery" />
+              <div class="overlay">Portrait</div>
+            </a>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close">×</button>
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+
+    <script src="js/includes.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const shots = document.querySelectorAll('.shot');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        shots.forEach(img => {
+          if (img.closest('a')) return;
+          img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || '';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+          });
+        });
+
+        function closeLightbox(){
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.src = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+      });
+    </script>
+  </body>
+</html>

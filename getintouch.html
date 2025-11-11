@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — ELANDEV'S HSCP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </head>
+  <body>
+    <div data-include="includes/header.html"></div>
+
+    <main>
+      <section class="section container contact-page">
+        <h2 class="about-heading">PROFILES <span class="small">SOCIAL</span></h2>
+          <p class="muted intro-note">I’d love to hear from you! Whether you have questions about my work, are interested in a collaboration, or just want to say hello, feel free to reach out.</p>
+
+        <div class="contact-grid">
+          <div class="contact-details">
+            <h3>Contact details</h3>
+            <p><strong>Address:</strong><br>Bandar Baru Sentul,<br>Wilayah Persekutuan Kuala Lumpur, Malaysia</p>
+            <p><strong>Phone:</strong><br><a href="tel:+60173955243">+60 17-395 5243</a></p>
+            
+            <!-- Profiles / Social (centered icons with labels) -->
+            <div class="about-profiles">
+                <ul class="profiles">
+                <li>
+                  <a href="https://www.instagram.com/hsc_production" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                    <span class="label">INSTAGRAM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.behance.net/elandevkd1" target="_blank" rel="noopener">
+                    <i class="fab fa-behance"></i>
+                    <span class="label">BEHANCE</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:hemadyaproduction@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span class="label">EMAIL</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <h3>Send a suggestion / message</h3>
+            <form id="contactForm">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required />
+
+              <label for="email">Your email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+
+              <button type="submit" class="btn primary">Send message</button>
+              <div id="contactResult" class="muted" style="margin-top:12px;display:none"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+
+    <script src="js/includes.js"></script>
+    <script>
+      // Mailto-based fallback contact handler: opens user's email client with prefilled fields
+      document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById('name').value.trim());
+        const email = encodeURIComponent(document.getElementById('email').value.trim());
+        const subject = encodeURIComponent(document.getElementById('subject').value.trim() || 'Website message');
+        const message = encodeURIComponent(document.getElementById('message').value.trim());
+        const body = encodeURIComponent('From: ' + name + ' (' + decodeURIComponent(email) + ')\n\n') + '%0D%0A' + message;
+
+        // try to open mail client
+        const mailto = `mailto:hemadyaproduction@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailto;
+
+        const result = document.getElementById('contactResult');
+        result.style.display = 'block';
+        result.textContent = 'Your mail client should open; if not, please email hemadyaproduction@gmail.com directly.';
+      });
+      window.addEventListener('load', () => { const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear(); });
+    </script>
+  </body>
+</html>

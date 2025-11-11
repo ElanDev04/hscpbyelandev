@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ELANDEV'S HSCP</title>
+    <meta name="description" content="Professional photographer portfolio and booking." />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-include="includes/header.html"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h2 class="hero-title">Capturing moments with light and intention</h2>
+            <p class="hero-sub">I’m Elan Dev, a passionate hobbyist photographer from Malaysia with 9 years of experience behind the lens. Photography has been my creative outlet for capturing meaningful moments and telling stories through images. My work focuses on portrait and street photography, where I strive to create clean, expressive, and emotionally resonant visuals. I’m available for on-location shoots and collaborations.</p>
+            <p class="actions"><a class="btn primary" href="portfolio.html">View portfolio</a>
+            <a class="btn" href="book.php">Book a session</a></p>
+          </div>
+          <div class="hero-image">
+            <img src="assets/1.jpg" alt="Sample photo" />
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+
+    <script src="js/includes.js"></script>
+    <script>
+      // Set current year after includes load
+      window.addEventListener('load', () => {
+        const y = document.getElementById('year');
+        if(y) y.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

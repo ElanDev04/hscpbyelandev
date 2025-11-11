@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — ELANDEV'S HSCP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </head>
+  <body>
+    <div data-include="includes/header.html"></div>
+
+    <main>
+      <section class="section container about-grid about-page">
+        <!-- Top: two-column intro (text left, avatar right) -->
+        <div class="about-top">
+          <div class="about-intro">
+            <h3 class="about-heading">ABOUT ME <span class="small">WHO AM I</span></h3>
+            <p>I’m Elan Dev, a passionate hobbyist photographer based in Malaysia. My journey with photography began 9 years ago, and since then, I’ve developed a deep love for capturing moments that tell a story. My work spans various genres, including portrait and street photography. I focus on natural light, candid moments and thoughtful composition to craft images that connect.</p>
+            <a class="btn primary" href="../hscp_website/assets/elans-resume-g.pdf">View Resume</a>
+          </div>
+
+          <div class="hero-image">
+            <img src="assets/1.png" alt="Sample photo" />
+          </div>
+        </div>
+
+        <!-- Education timeline (centered) -->
+        <div class="about-education">
+          <h3 class="about-heading">EDUCATION <span class="small">LEARNING</span></h3>
+          <div class="timeline">
+            <div class="timeline-col left-col">
+              <div class="edu-item">
+                <h4>DIPLOMA IN COMPUTER FORENSIC</h4>
+                <p class="muted">Faculty of Information Sciences &amp; Engineering<br>Management and Science University</p>
+              </div>
+            </div>
+
+            <div class="timeline-col center-col">
+              <div class="center-line">
+                <div class="year">2019</div>
+                <div class="spacer"></div>
+                <div class="year">2022</div>
+              </div>
+            </div>
+
+            <div class="timeline-col right-col">
+              <div class="edu-item">
+                <h4>BACHELOR IN COMPUTER ENGINEERING</h4>
+                <p class="muted">Faculty of Information Sciences &amp; Engineering<br>Management and Science University</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services / Styles (centered icons with labels) -->
+        <div class="about-profiles">
+          <h3 class="about-heading">SERVICES <span class="small">WHAT I SHOOT</span></h3>
+          <p class="muted intro-note">Services I Offer</p>
+
+          <ul class="profiles services">
+            <li>
+              <a href="#">
+                <i class="fas fa-user"></i>
+                <span class="label">Modeling</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-birthday-cake"></i>
+                <span class="label">Birthday Shoots</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-heart"></i>
+                <span class="label">Couple Photography</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-ring"></i>
+                <span class="label">ROMs</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-gift"></i>
+                <span class="label">Bride Seeing</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-camera-retro"></i>
+                <span class="label">Portraits</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-baby"></i>
+                <span class="label">Baby Shower</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Profiles / Social (centered icons with labels) -->
+        <div class="about-profiles">
+          <h3 class="about-heading">PROFILES <span class="small">SOCIAL</span></h3>
+          <p class="muted intro-note">I’d love to hear from you! Whether you have questions about my work, are interested in a collaboration, or just want to say hello, feel free to reach out.</p>
+
+          <ul class="profiles">
+            <li>
+              <a href="https://www.instagram.com/hsc_production" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+                <span class="label">INSTAGRAM</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.behance.net/elandevkd1" target="_blank" rel="noopener">
+                <i class="fab fa-behance"></i>
+                <span class="label">BEHANCE</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hemadyaproduction@gmail.com">
+                <i class="fas fa-envelope"></i>
+                <span class="label">EMAIL</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Stats: centered 3 columns -->
+        <div class="about-stats">
+          <div class="stats-row center-stats">
+            <div class="stat">
+              <div class="stat-num">9</div>
+              <div class="stat-label">years</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">20+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+
+    <script src="js/includes.js"></script>
+    <script>window.addEventListener('load', () => { const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear(); });</script>
+  </body>
+</html>
