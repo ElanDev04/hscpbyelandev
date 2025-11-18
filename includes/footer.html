@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <small>&copy; <span id="year"></span> Hemadya Share Crew Photography</small>
+  </div>
+</footer>
+    <script src="js/includes.js"></script>
+    <script>
+      // Set current year after includes load
+      window.addEventListener('load', () => {
+        const y = document.getElementById('year');
+        if(y) y.textContent = new Date().getFullYear();
+      });
+    </script>
